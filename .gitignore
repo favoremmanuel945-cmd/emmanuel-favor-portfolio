@@ -1,0 +1,15 @@
+# macOS
+.DS_Store
+
+# Portfolio development backups
+index.before-*.html
+index.stage3-backup.html
+index.contact-visual-final.html
+index.pre-production-final-*.html
+
+# Development / diagnostic files
+portfolio-animation-diagnosis.txt
+add-portfolio-projects.py
+
+# Editor
+.vscode/
