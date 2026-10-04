@@ -6150,3 +6150,168 @@ body.transitioning.open-curtain .curtain-right {
 
 }
 
+
+/* ==========================================================
+   REAL PROJECT SCREENSHOTS
+   ========================================================== */
+
+.project-screenshot-visual {
+    position: relative;
+    overflow: hidden;
+}
+
+.project-screenshot {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    transition:
+        transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1),
+        filter 0.7s ease;
+}
+
+.project-screenshot-visual:hover .project-screenshot {
+    transform: scale(1.025);
+}
+
+@media (max-width: 768px) {
+    .project-screenshot {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center top;
+    }
+}
+
+/* =========================================================
+   PROJECT SCREENSHOTS
+   ========================================================= */
+
+.project-screenshot-visual {
+    position: relative;
+    overflow: hidden;
+    padding: 0;
+}
+
+.project-screenshot {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+}
+
+/* Pengstores screenshot */
+.peng-visual.project-screenshot-visual {
+    background: #120a10;
+}
+
+.peng-visual .project-screenshot {
+    object-position: top center;
+}
+
+@media (max-width: 768px) {
+    .project-screenshot {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: top center;
+    }
+}
+
+
+/* ============================================================
+   WILSON'S — REMOVE LEGACY PLACEHOLDER OVERLAYS
+============================================================ */
+
+.wilsons-visual::before,
+.wilsons-visual::after {
+    content: none !important;
+    display: none !important;
+}
+
+.wilsons-visual:hover::after {
+    transform: none !important;
+}
+
+
+/* ============================================================
+   NARU — REAL PROJECT SCREENSHOT
+============================================================ */
+
+.naru-visual {
+    position: relative;
+    display: block;
+    width: 100%;
+    min-height: 0 !important;
+    overflow: hidden;
+    background: #080808 !important;
+}
+
+.naru-project-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+/* Remove legacy Naru placeholder frame + giant N */
+.naru-visual::before,
+.naru-visual::after {
+    content: none !important;
+    display: none !important;
+}
+
+/* Disable old placeholder elements if any remain */
+.naru-visual .project-placeholder-inner,
+.naru-visual .placeholder-status {
+    display: none !important;
+}
+
+/* Mobile */
+@media (max-width: 800px) {
+    .naru-visual {
+        min-height: 0 !important;
+    }
+
+    .naru-project-image {
+        width: 100%;
+        height: auto;
+    }
+}
+
+
+/* =========================================================
+   SELECTED PROJECTS — MOBILE SCREENSHOT FIX
+   Preserve full project screenshots on small screens
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    /* Let screenshot containers follow the image aspect ratio */
+    .project-visual:has(img) {
+        height: auto !important;
+        min-height: 0 !important;
+        aspect-ratio: auto !important;
+        overflow: hidden;
+    }
+
+    /* Display the complete screenshots rather than desktop cropping */
+    .project-visual img,
+    .flowos-project-image,
+    .peng-project-image,
+    .elan-project-image,
+    .wilsons-project-image,
+    .naru-project-image {
+        display: block !important;
+        width: 100% !important;
+        height: auto !important;
+        max-width: 100% !important;
+        object-fit: contain !important;
+        object-position: center center !important;
+        transform: none !important;
+    }
+
+}
+
